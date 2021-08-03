@@ -8,6 +8,16 @@ const styles = StyleSheet.create({
     header: {
         height: 250
     },
+    backContainer: {
+        width: 40,
+        height: 40,
+    },
+    icon: {
+        color: 'white',
+        position: 'absolute',
+        top: 10,
+        left: 10
+    },
     imageCard: {
         width: '100%',
         height: '100%',
@@ -29,7 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 28
     },
     body: {
-        backgroundColor: '#1C1C1C',
+        backgroundColor: '#393939',
         height: '100%'
     },  
     imageBox: {

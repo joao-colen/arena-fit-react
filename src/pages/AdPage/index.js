@@ -1,19 +1,34 @@
 import React, {useState} from 'react';
 import {View, Text, Image, ImageBackground, ScrollView, Platform} from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
+
 import { RectButton } from 'react-native-gesture-handler';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import styles from './styles';
 import Card from '../../components/Card';
 import ads from '../../assets/database/ads';
+
 
 function AdPage({route}) {
     const { title, name, profile, address, image, price, description } = route.params;
     const [date, setDate] = useState(new Date(1598051730000));
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
+
+    const { navigate } = useNavigation();
+    function goConfirmartionPage() {
+        navigate('Confirmation')
+    }
+
+    function goHomePage() {
+        navigate('Home')
+    }
+
 
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
@@ -32,7 +47,6 @@ function AdPage({route}) {
       };
     
       const showTimepicker = () => {
-          console.log(Platform.OS);
         showMode('time');
       };
     
@@ -43,7 +57,12 @@ function AdPage({route}) {
                     style={styles.imageCard} 
                     source={image}
                 />
-                <View style={styles.titleBox}>
+                <View style={styles.backContainer}>
+                    
+                        <Icon name="arrow-left" size={25} style={styles.icon} onPress={goHomePage}/>
+                    
+                </View>
+                <View style={styles.titleBox}>  
                     <Text style={styles.name}>{name}</Text>
                 </View>
             </View>
@@ -68,7 +87,7 @@ function AdPage({route}) {
                         <RectButton style={styles.button} onPress={showTimepicker}>
                             <Text style={styles.textButton} >Escolha seu horário</Text>
                         </RectButton>
-                        <RectButton style={styles.button}>
+                        <RectButton style={styles.button} onPress = {goConfirmartionPage}>
                             <Text style={styles.textButton}>Reservar Horário</Text>
                         </RectButton>
                         {show && (

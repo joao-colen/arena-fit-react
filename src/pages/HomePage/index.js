@@ -16,7 +16,7 @@ function HomePage() {
                     </Text>
                 </View>
                 
-                <Text style={styles.address}>Av. Roriz, 50</Text>
+                <Text style={styles.address}>Av. Roriz, 250</Text>
             </View>
             <View style={styles.body}>
                 <FlatList
