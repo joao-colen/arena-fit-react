@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         height: 100
     },
     containerProfile: {
-        paddingTop: 20,
+        paddingTop: 30,
         flexDirection: 'row',
     },
     textProfile: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     address: {
         textDecorationLine: 'underline',
         fontSize: 16,
-        paddingTop: 15,
+        paddingTop: 30,
         color: 'white'
     },
     body: {

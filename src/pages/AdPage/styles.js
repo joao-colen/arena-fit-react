@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
        height: '100%'
     },
     header: {
-        height: 250
+        height: 200
     },
     backContainer: {
         width: 40,
@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         position: 'absolute',
-        paddingHorizontal: 20,
         borderRadius: 25,
         resizeMode: 'cover'
     },
@@ -43,7 +42,6 @@ const styles = StyleSheet.create({
         height: '100%'
     },  
     imageBox: {
-        //marginTop: 10
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -75,7 +73,8 @@ const styles = StyleSheet.create({
         fontSize: 22
     },
     description: {
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        marginBottom: 20
     },
     descriptionText: {
         color: 'white',
@@ -90,7 +89,8 @@ const styles = StyleSheet.create({
     },
     timeBox: {
         paddingHorizontal: 20,
-        marginTop: 20
+        marginTop: 20,
+        height: 140
     },
     textButton: {
         fontSize: 18,

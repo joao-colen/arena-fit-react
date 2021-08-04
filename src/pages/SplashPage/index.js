@@ -17,7 +17,6 @@ function SplashPage(props) {
                 Arena
                 <Text style={styles.secondName}>Fit</Text>
             </Text>
-            
         </View>
         
     );

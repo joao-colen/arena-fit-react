@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+
 import {View, Text, Image, ImageBackground, ScrollView, Platform} from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
@@ -10,9 +11,6 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './styles';
-import Card from '../../components/Card';
-import ads from '../../assets/database/ads';
-
 
 function AdPage({route}) {
     const { title, name, profile, address, image, price, description } = route.params;
@@ -21,6 +19,7 @@ function AdPage({route}) {
     const [show, setShow] = useState(false);
 
     const { navigate } = useNavigation();
+    
     function goConfirmartionPage() {
         navigate('Confirmation')
     }
@@ -29,10 +28,8 @@ function AdPage({route}) {
         navigate('Home')
     }
 
-
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
-        
         setShow(Platform.OS === 'ios');
         setDate(currentDate);
       };
@@ -41,11 +38,7 @@ function AdPage({route}) {
         setShow(true);
         setMode(currentMode);
       };
-    
-      const showDatepicker = () => {
-        showMode('date');
-      };
-    
+
       const showTimepicker = () => {
         showMode('time');
       };
@@ -58,9 +51,7 @@ function AdPage({route}) {
                     source={image}
                 />
                 <View style={styles.backContainer}>
-                    
-                        <Icon name="arrow-left" size={25} style={styles.icon} onPress={goHomePage}/>
-                    
+                    <Icon name="arrow-left" size={25} style={styles.icon} onPress={goHomePage}/>
                 </View>
                 <View style={styles.titleBox}>  
                     <Text style={styles.name}>{name}</Text>
