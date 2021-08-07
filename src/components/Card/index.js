@@ -1,10 +1,12 @@
 import React from 'react';
+import Reactotron from 'reactotron-react-native'
 import {View, Text, ImageBackground, TouchableOpacity} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+const bench = Reactotron.benchmark("slow function benchmark")
 
 import styles from './styles';
- 
+
 function Card(props) {
     const { title, name, profile, address, image, price, description } = props.card;
     const { navigate } = useNavigation();
@@ -26,6 +28,7 @@ function Card(props) {
                 style={styles.imageCard} 
                 source={image}
             />
+            
             <View style={styles.textCard} >
                 <View style={styles.description}>
                     <Text style={styles.name}>{title}</Text>

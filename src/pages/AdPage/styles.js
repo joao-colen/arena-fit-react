@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     icon: {
         color: 'white',
         position: 'absolute',
-        top: 10,
+        top: 20,
         left: 10
     },
     imageCard: {

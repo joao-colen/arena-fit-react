@@ -1,15 +1,10 @@
+import Reactotron from 'reactotron-react-native'
 import React, {useState} from 'react';
-
 import {View, Text, Image, ImageBackground, ScrollView, Platform} from 'react-native';
-
 import { useNavigation } from '@react-navigation/native';
-
 import { RectButton } from 'react-native-gesture-handler';
-
 import DateTimePicker from '@react-native-community/datetimepicker';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import styles from './styles';
 
 function AdPage({route}) {
@@ -19,13 +14,30 @@ function AdPage({route}) {
     const [show, setShow] = useState(false);
 
     const { navigate } = useNavigation();
-    
+
     function goConfirmartionPage() {
+        const bench = Reactotron.benchmark("slow function benchmark")
+
+        // Code that does thing A
+        bench.step("Confirmation A");
+    
         navigate('Confirmation')
+
+        // Code that does thing C
+        bench.stop("Confirmation B");
     }
 
     function goHomePage() {
+        const bench = Reactotron.benchmark("slow function benchmark")
+
+        // Code that does thing A
+        bench.step("Home A");
+    
         navigate('Home')
+ 
+        // Code that does thing C
+        bench.stop("Home B");
+        
     }
 
     const onChange = (event, selectedDate) => {
@@ -40,7 +52,14 @@ function AdPage({route}) {
       };
 
       const showTimepicker = () => {
+        const bench = Reactotron.benchmark("slow function benchmark")
+        // Code that does thing A
+        bench.step("Time A");
+    
         showMode('time');
+
+        // Code that does thing C
+        bench.stop("Time B");
       };
     
     return (
